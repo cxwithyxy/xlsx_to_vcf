@@ -1,17 +1,18 @@
 {
   "name": "xlsx_to_vcf",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://gitee.com/gzmmc/xlsx_to_vcf.git",
   "author": "chenxuan@caugoo.com",
   "license": "MIT",
   "devDependencies": {
+    "electron": "5.0.4",
     "typescript": "^3.6.3"
   },
   "dependencies": {
     "exceljs": "^2.0.1"
   },
   "scripts": {
-    "start": "tsc"
+    "start": "tsc && electron ."
   }
 }
