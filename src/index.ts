@@ -7,6 +7,11 @@ app.on("ready", async () =>
     let bb = new BrowserWindow(
     {
         width: 300,
+        height: 512,
+        resizable: false,
+        alwaysOnTop: true,
+        fullscreenable:false,
+        autoHideMenuBar:true,
         webPreferences:
         {
             preload: `${__dirname}/../dist/src_browser/Main.js`
