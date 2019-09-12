@@ -3,6 +3,15 @@ import {openSync, writeSync, closeSync} from "fs";
 
 class Not_row extends Error{}
 
+/**
+ * 使用方法
+ * let a = new Xlsx_to_vcf()
+ * await a.read_file("M:/aa.xlsx")
+ * await a.save_file("M:/a.vcf")
+ *
+ * @export
+ * @class Xlsx_to_vcf
+ */
 export class Xlsx_to_vcf
 {
     workbook: Workbook
