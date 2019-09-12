@@ -1,4 +1,4 @@
-import { XlsxToVcf } from "./XlsxToVcf";
+import { Xlsx_to_vcf } from "./Xlsx_to_vcf";
 
 import { app, BrowserWindow, dialog } from "electron";
 
@@ -15,9 +15,13 @@ app.on("ready", async () =>
     // await bb.loadFile("index.html")
     // await bb.webContents.executeJavaScript(`new Main ()`)
     // console.log(dialog.showOpenDialogSync({ properties: ['openFile'] }))
-    let a = new XlsxToVcf()
-    await a.read_file("M:/aa.xlsx")
-    console.log(a);
+    let a = new Xlsx_to_vcf()
+    await a.read_file("M:/aa2.xlsx")
+    console.log("load finish");
+    
+    await a.get_all_data()
+
+    console.log("END");
     
 })
 
