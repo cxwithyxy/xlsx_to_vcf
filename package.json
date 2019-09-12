@@ -1,18 +1,44 @@
 {
   "name": "xlsx_to_vcf",
-  "version": "1.0.0",
+  "version": "1.20190912201036.0",
   "main": "dist/index.js",
   "repository": "https://gitee.com/gzmmc/xlsx_to_vcf.git",
   "author": "chenxuan@caugoo.com",
   "license": "MIT",
   "devDependencies": {
+    "electron": "6.0.2",
+    "electron-builder": "^21.2.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "electron": "6.0.2",
     "exceljs": "^2.0.1"
   },
   "scripts": {
-    "start": "tsc && electron ."
+    "start": "tsc && electron .",
+    "exe": "tsc && electron-builder --win portable"
+  },
+  "build": {
+    "directories": {
+      "output": "build_dist"
+    },
+    "files": [
+      "**/*",
+      "!src",
+      "!yarn-error.log",
+      "!*.md",
+      "!tsconfig.json",
+      "!.vscode/",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ]
   }
 }
