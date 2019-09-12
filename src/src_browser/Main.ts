@@ -1,3 +1,4 @@
+import { ipcRenderer } from "electron";
 class Main
 {
     constructor()
@@ -6,18 +7,12 @@ class Main
             e.preventDefault();
             e.stopPropagation();
             let files = (<DataTransfer>e.dataTransfer).files
-            for(let i in files)
-            {
-                console.log('File(s) you dragged here: ', files[i].path)
-            }
+            ipcRenderer.send("tell_you_the_file_path", files[0].path)
         });
         document.addEventListener('dragover', (e) => {
             e.preventDefault();
             e.stopPropagation();
         });
-
-        console.log("readasdasd");
-        
     }
 }
 
