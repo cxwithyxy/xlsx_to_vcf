@@ -1,6 +1,6 @@
 {
   "name": "xlsx_to_vcf",
-  "version": "1.20190912201036.0",
+  "version": "1.20190916152010.0",
   "main": "dist/index.js",
   "repository": "https://gitee.com/gzmmc/xlsx_to_vcf.git",
   "author": "chenxuan@caugoo.com",
