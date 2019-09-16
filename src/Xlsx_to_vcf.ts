@@ -37,7 +37,7 @@ export class Xlsx_to_vcf
                 index ++
                 let n_and_p = await this.get_name_and_phone(sheet, index)
                 let vcf_str: string
-                vcf_str = `BEGIN:VCARD\nVERSION:3.0\nN:${n_and_p.name};;;;\nFN:${n_and_p.name}\nTEL;TYPE=CELL:${n_and_p.phone}\nEND:VCARD`
+                vcf_str = `BEGIN:VCARD\nVERSION:3.0\nN:${n_and_p.name};;;;\nFN:${n_and_p.name}\nTEL;TYPE=CELL:${n_and_p.phone}\nEND:VCARD\n`
                 writeSync(vcf_file, vcf_str)
             }catch(e)
             {
